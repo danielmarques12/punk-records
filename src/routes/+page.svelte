@@ -10,6 +10,10 @@
 	import IconPlus from 'virtual:icons/mdi/plus'
 	import IconMenuRight from 'virtual:icons/mdi/menu-right'
 	import IconMenuDown from 'virtual:icons/mdi/menu-down'
+	import IconFilter from 'virtual:icons/mdi/filter-variant'
+	import IconGridLarge from 'virtual:icons/mdi/grid-large'
+	import IconInfo from 'virtual:icons/mdi/information-outline'
+	import IconArrowDown from 'virtual:icons/mdi/arrow-down'
 </script>
 
 <main class="py-2 px-4 bg-slate-50">
@@ -26,7 +30,7 @@
 				</span>
 
 				<input
-					class="bg-slate-100 text-slate-600 placeholder-slate-600 h-12 w-[800px] rounded-full px-14 focus:outline-none"
+					class="focus:bg-white bg-slate-100 text-slate-600 placeholder-slate-600 h-12 w-[800px] rounded-full px-14 focus:outline-none"
 					placeholder="Search in Drive"
 					type="text"
 				/>
@@ -151,18 +155,57 @@
 		</div>
 
 		<div class="container bg-white m-2 p-4 rounded-2xl">
-			<div class="flex items-center justify-between">
-				<div>
-					<button class="flex gap-1 items-center">
-						<span class="text-2xl">My Drive</span>
+			<div class="flex flex-col gap-4">
+				<div class="flex items-center justify-between">
+					<div>
+						<button class="flex gap-1 items-center">
+							<span class="text-2xl">My Drive</span>
+							<IconMenuDown />
+						</button>
+					</div>
+
+					<div class="flex items-center gap-4">
+						<IconFilter />
+						<IconGridLarge />
+						<IconInfo />
+					</div>
+				</div>
+
+				<div class="flex items-center gap-3 text-sm">
+					<button
+						class="border-[1px] border-slate-500 rounded-md px-3 py-1 flex items-center justify-center gap-3"
+					>
+						<span> File type </span>
+						<IconMenuDown />
+					</button>
+
+					<button
+						class="border-[1px] border-slate-500 rounded-md px-3 py-1 flex items-center justify-center gap-3"
+					>
+						<span> People </span>
+						<IconMenuDown />
+					</button>
+
+					<button
+						class="border-[1px] border-slate-500 rounded-md px-3 py-1 flex items-center justify-center gap-3"
+					>
+						<span> Last modified </span>
 						<IconMenuDown />
 					</button>
 				</div>
 
-				<div class="flex items-center gap-4">
-					<IconMenuDown />
-					<IconMenuDown />
-					<IconMenuDown />
+				<div class="">
+					<table class="container text-slate-600 font-light flex">
+						<tr class="flex items-center justify-evenly">
+							<th class="flex items-center">
+								<span>Name</span>
+								<IconArrowDown />
+							</th>
+							<th>Owner</th>
+							<th>Last modified</th>
+							<th>File size</th>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
