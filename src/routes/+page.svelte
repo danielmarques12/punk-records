@@ -3,10 +3,13 @@
 	import IconHelpCircle from 'virtual:icons/mdi/help-circle'
 	import IconDotsGrid from 'virtual:icons/mdi/dots-grid'
 	import IconGoogleDrive from 'virtual:icons/mdi/google-drive'
+	import IconFolderGoogleDrive from 'virtual:icons/mdi/folder-google-drive'
 	import IconMagnify from 'virtual:icons/mdi/magnify'
 	import IconTune from 'virtual:icons/mdi/tune'
 	import IconCheck from 'virtual:icons/mdi/check-underline-circle-outline'
 	import IconPlus from 'virtual:icons/mdi/plus'
+	import IconMenuRight from 'virtual:icons/mdi/menu-right'
+	import IconMenuDown from 'virtual:icons/mdi/menu-down'
 </script>
 
 <main class="py-2 px-4 bg-slate-50">
@@ -48,10 +51,10 @@
 	</header>
 
 	<div class="flex">
-		<div class="h-screen p-4 flex flex-col gap-4">
+		<div class="min-w-[250px] h-screen py-4 mr-4 flex flex-col gap-4">
 			<div>
 				<button
-					class="flex gap-2 bg-white rounded-xl shadow py-4 px-5 hover:bg-slate-200"
+					class="flex gap-2 bg-white rounded-xl drop-shadow-lg py-4 px-5 hover:bg-slate-200"
 				>
 					<IconPlus class="w-6 h-6" />
 					New
@@ -59,14 +62,109 @@
 			</div>
 
 			<div class="flex flex-col gap-4">
-				<div>
-					<div>
+				<div class="flex flex-col">
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container bg-sky-200"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
 						<p class="text-slate-500 font-medium">My Drive</p>
+					</div>
+
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Computers</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col">
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Shared with me</p>
+					</div>
+
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Recent</p>
+					</div>
+
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Starred</p>
+					</div>
+				</div>
+
+				<div class="flex flex-col">
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Spam</p>
+					</div>
+
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Trash</p>
+					</div>
+
+					<div
+						class="flex items-center justify-left gap-3 rounded-full py-1 px-2 container"
+					>
+						<div class="flex items-center justify-center">
+							<IconMenuRight class="w-4 h-4" />
+							<IconFolderGoogleDrive />
+						</div>
+						<p class="text-slate-500 font-medium">Storage</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="bg-white">Right Column</div>
+		<div class="container bg-white m-2 p-4 rounded-2xl">
+			<div class="flex items-center justify-between">
+				<div>
+					<button class="flex gap-1 items-center">
+						<span class="text-2xl">My Drive</span>
+						<IconMenuDown />
+					</button>
+				</div>
+
+				<div class="flex items-center gap-4">
+					<IconMenuDown />
+					<IconMenuDown />
+					<IconMenuDown />
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
