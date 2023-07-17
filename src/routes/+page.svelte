@@ -14,6 +14,7 @@
 	import IconGridLarge from 'virtual:icons/mdi/grid-large'
 	import IconInfo from 'virtual:icons/mdi/information-outline'
 	import IconArrowDown from 'virtual:icons/mdi/arrow-down'
+	import IconFolder from 'virtual:icons/mdi/folder'
 </script>
 
 <main class="py-2 px-4 bg-slate-50">
@@ -194,17 +195,47 @@
 					</button>
 				</div>
 
-				<div class="">
-					<table class="container text-slate-600 font-light flex">
-						<tr class="flex items-center justify-evenly">
-							<th class="flex items-center">
-								<span>Name</span>
-								<IconArrowDown />
-							</th>
-							<th>Owner</th>
-							<th>Last modified</th>
-							<th>File size</th>
-						</tr>
+				<div>
+					<table class="container text-slate-600 font-light">
+						<thead class="border-b-2 container">
+							<tr class="flex items-center justify-between py-3">
+								<th class="flex items-center gap-4">
+									<span>Name</span>
+									<IconArrowDown />
+								</th>
+
+								<th>Owner</th>
+
+								<th class="flex items-center"
+									><span>Last modified</span>
+									<IconMenuDown />
+								</th>
+
+								<th>File size</th>
+							</tr>
+						</thead>
+
+						<tbody class="border-b-2 container">
+							<tr class="flex items-center p-3 justify-between">
+								<td class="flex items-center gap-4">
+									<IconFolder />
+									<span>My Stuff</span>
+								</td>
+
+								<td class="flex items-center gap-2">
+									<img
+										src="https://i.imgur.com/Ydd8U6P.jpg"
+										alt="Avatar"
+										class="h-5 w-5 rounded-full"
+									/>
+									<span class="text-sm"> me </span>
+								</td>
+
+								<td><span class="text-sm">Feb 26, 2021 me</span> </td>
+
+								<td> - </td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 			</div>
