@@ -16,6 +16,13 @@
 	import IconArrowDown from 'virtual:icons/mdi/arrow-down'
 	import IconFolder from 'virtual:icons/mdi/folder'
 	import IconFile from 'virtual:icons/mdi/file'
+	import IconComputers from 'virtual:icons/mdi/cellphone-link'
+	import IconSharedWithMe from 'virtual:icons/mdi/account-supervisor'
+	import IconRecent from 'virtual:icons/mdi/clock-time-four-outline'
+	import IconStarred from 'virtual:icons/mdi/star-outline'
+	import IconSpam from 'virtual:icons/mdi/alert-octagon-outline'
+	import IconTrash from 'virtual:icons/mdi/trash-can-outline'
+	import IconStorage from 'virtual:icons/mdi/cloud-outline'
 
 	type DriveItem = {
 		kind: 'file' | 'folder'
@@ -138,7 +145,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconComputers />
 						</div>
 						<p class="text-slate-500 font-medium">Computers</p>
 					</div>
@@ -150,7 +157,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconSharedWithMe />
 						</div>
 						<p class="text-slate-500 font-medium">Shared with me</p>
 					</div>
@@ -160,7 +167,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconRecent />
 						</div>
 						<p class="text-slate-500 font-medium">Recent</p>
 					</div>
@@ -170,7 +177,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconStarred />
 						</div>
 						<p class="text-slate-500 font-medium">Starred</p>
 					</div>
@@ -182,7 +189,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconSpam />
 						</div>
 						<p class="text-slate-500 font-medium">Spam</p>
 					</div>
@@ -192,7 +199,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconTrash />
 						</div>
 						<p class="text-slate-500 font-medium">Trash</p>
 					</div>
@@ -202,7 +209,7 @@
 					>
 						<div class="flex items-center justify-center">
 							<IconMenuRight class="w-4 h-4" />
-							<IconFolderGoogleDrive />
+							<IconStorage />
 						</div>
 						<p class="text-slate-500 font-medium">Storage</p>
 					</div>
