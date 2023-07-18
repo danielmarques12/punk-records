@@ -15,6 +15,7 @@
 	import IconInfo from 'virtual:icons/mdi/information-outline'
 	import IconArrowDown from 'virtual:icons/mdi/arrow-down'
 	import IconFolder from 'virtual:icons/mdi/folder'
+	import IconFile from 'virtual:icons/mdi/file'
 
 	type DriveItem = {
 		kind: 'file' | 'folder'
@@ -206,6 +207,21 @@
 						<p class="text-slate-500 font-medium">Storage</p>
 					</div>
 				</div>
+
+				<div class="flex flex-col items-center gap-2">
+					<div class="mx-auto w-10/12 bg-gray-200 rounded-full h-1">
+						<div class="bg-blue-600 h-1 rounded-full w-1/3" />
+					</div>
+					<span class="font-light"> 3.93 GB of 15 GB used </span>
+				</div>
+
+				<div class="flex items-center justify-center">
+					<button
+						class="text-blue-600 text-sm border-gray-700 hover:bg-gray-100 border-[1px] rounded-full h-10 w-2/3"
+					>
+						Get more storage
+					</button>
+				</div>
 			</div>
 		</div>
 
@@ -275,7 +291,12 @@
 									class="border-b-2 flex items-center p-3 hover:bg-gray-100 justify-between"
 								>
 									<td class="flex items-center gap-4">
-										<IconFolder />
+										{#if item.kind === 'file'}
+											<IconFile />
+										{:else}
+											<IconFolder />
+										{/if}
+
 										<span>{item.name}</span>
 									</td>
 
