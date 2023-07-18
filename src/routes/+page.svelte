@@ -15,6 +15,60 @@
 	import IconInfo from 'virtual:icons/mdi/information-outline'
 	import IconArrowDown from 'virtual:icons/mdi/arrow-down'
 	import IconFolder from 'virtual:icons/mdi/folder'
+
+	type DriveItem = {
+		kind: 'file' | 'folder'
+		name: string
+		size?: number
+		owner: {
+			avatar_url: string
+			name: string
+		}
+		lastModified: {
+			date: Date
+			author: string
+		}
+	}
+
+	const itens: DriveItem[] = [
+		{
+			kind: 'folder',
+			name: 'coding',
+			owner: {
+				name: 'me',
+				avatar_url: 'https://i.imgur.com/Ydd8U6P.jpg'
+			},
+			lastModified: {
+				author: 'me',
+				date: new Date('01-29-2021')
+			}
+		},
+		{
+			kind: 'folder',
+			name: 'My Stuff',
+			owner: {
+				name: 'me',
+				avatar_url: 'https://i.imgur.com/Ydd8U6P.jpg'
+			},
+			lastModified: {
+				author: 'me',
+				date: new Date('02-26-2021')
+			}
+		},
+		{
+			kind: 'file',
+			name: 'mods.zip',
+			owner: {
+				name: 'me',
+				avatar_url: 'https://i.imgur.com/Ydd8U6P.jpg'
+			},
+			lastModified: {
+				author: 'me',
+				date: new Date('07-02-2023')
+			},
+			size: 69.9
+		}
+	]
 </script>
 
 <main class="py-2 px-4 bg-slate-50">
@@ -215,26 +269,35 @@
 							</tr>
 						</thead>
 
-						<tbody class="border-b-2 container">
-							<tr class="flex items-center p-3 justify-between">
-								<td class="flex items-center gap-4">
-									<IconFolder />
-									<span>My Stuff</span>
-								</td>
+						<tbody class=" container">
+							{#each itens as item}
+								<tr
+									class="border-b-2 flex items-center p-3 hover:bg-gray-100 justify-between"
+								>
+									<td class="flex items-center gap-4">
+										<IconFolder />
+										<span>{item.name}</span>
+									</td>
 
-								<td class="flex items-center gap-2">
-									<img
-										src="https://i.imgur.com/Ydd8U6P.jpg"
-										alt="Avatar"
-										class="h-5 w-5 rounded-full"
-									/>
-									<span class="text-sm"> me </span>
-								</td>
+									<td class="flex items-center gap-2">
+										<img
+											src={item.owner.avatar_url}
+											alt="Avatar"
+											class="h-5 w-5 rounded-full"
+										/>
+										<span class="text-sm"> {item.owner.name} </span>
+									</td>
 
-								<td><span class="text-sm">Feb 26, 2021 me</span> </td>
+									<td
+										><span class="text-sm"
+											>{item.lastModified.date.toDateString()}
+											{item.lastModified.author}</span
+										>
+									</td>
 
-								<td> - </td>
-							</tr>
+									<td> {item.size ? item.size : '-'} </td>
+								</tr>
+							{/each}
 						</tbody>
 					</table>
 				</div>
