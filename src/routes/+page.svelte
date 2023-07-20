@@ -23,6 +23,11 @@
 	import IconSpam from 'virtual:icons/mdi/alert-octagon-outline'
 	import IconTrash from 'virtual:icons/mdi/trash-can-outline'
 	import IconStorage from 'virtual:icons/mdi/cloud-outline'
+	import { createClient } from '@supabase/supabase-js'
+	import {
+		PUBLIC_SUPABASE_URL,
+		PUBLIC_SUPABASE_ANON_KEY
+	} from '$env/static/public'
 
 	type DriveItem = {
 		kind: 'file' | 'folder'
@@ -77,6 +82,27 @@
 			size: 69.9
 		}
 	]
+
+	let files: FileList
+
+	const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY)
+
+	async function handleLogin() {
+		const { data, error } = await supabase.auth.signInWithOAuth({
+			provider: 'github',
+			options: { redirectTo: 'http://localhost:5173' }
+		})
+
+		console.log({ data, error })
+	}
+
+	async function handleUpload() {
+		const { data, error } = await supabase.storage
+			.from('files')
+			.upload('public/avatars/me.jpg', files[0])
+
+		console.log({ data, error })
+	}
 </script>
 
 <main class="py-2 px-4 bg-slate-50">
@@ -116,6 +142,19 @@
 			/>
 		</div>
 	</header>
+
+	<button on:click={handleLogin}>SIGN IN</button>
+
+	<form on:submit={handleUpload}>
+		<input type="file" bind:files />
+		<button type="submit">enviasr</button>
+	</form>
+
+	{#if files && files[0]}
+		<p>
+			{files[0].name}
+		</p>
+	{/if}
 
 	<div class="flex">
 		<div class="min-w-[250px] h-screen py-4 mr-4 flex flex-col gap-4">
